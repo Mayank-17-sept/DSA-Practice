@@ -4,13 +4,16 @@ public;
           unordered_map<char, int> mp;
 
           for(char c : s) mp[c]++;
+//go through every character in s & increase its count by 1
 
           for(char c : t) mp[c]--;
+// go through every character in t & decrease its count by 1
 
           for(auto x : mp){
               if(x.second != 0)  return false;
-          };
+          }
+// go through every key value pair in the map. If any is not 0, the strings have different --> not an anagram
 
           return true;
-      }
+      }      //If we made it through without returning false, all counts are 0 → it's an anagram
 };
